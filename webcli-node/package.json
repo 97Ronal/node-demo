@@ -1,0 +1,65 @@
+{
+  "name": "base-project",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "blueimp-md5": "^2.12.0",
+    "crypto-js": "^4.0.0",
+    "egg": "^2.15.1",
+    "egg-cors": "^2.2.3",
+    "egg-logger": "^2.4.1",
+    "egg-multipart": "^2.9.0",
+    "egg-mysql": "^3.0.0",
+    "egg-oss": "^2.0.0",
+    "egg-scripts": "^2.11.0",
+    "egg-static": "^2.2.0",
+    "egg-validate": "^2.0.2",
+    "node-jsencrypt": "^1.0.0",
+    "object-assign": "^4.1.1",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.16.0",
+    "eslint-config-egg": "^7.5.1",
+    "babel-eslint": "8"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start:test": "EGG_SERVER_ENV=test egg-scripts start --daemon --title=sq-epidemic-business",
+    "start": "EGG_SERVER_ENV=prod egg-scripts start --daemon --title=sq-epidemic-business",
+    "stop": "egg-scripts stop --title=sq-epidemic-business",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "deploy:prod": "sh build.sh"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "main": ".autod.conf.js",
+  "directories": {
+    "test": "test"
+  }
+}
